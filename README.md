@@ -88,7 +88,7 @@ Aries isn’t perfect, but hey, neither are we.
 ## ⭐ Star this Repo or Aries will be sad 
 
 ─────── ⋆⋅☆⋅⋆ ───────
-Designed by Abhi
+Designed by Aoi
 ─────── ⋆⋅☆⋅⋆ ───────
 
 
