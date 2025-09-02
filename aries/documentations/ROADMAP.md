@@ -46,4 +46,4 @@ Aries isn’t just another AI assistant. It’s:
 - ✔ Personal – Knows your story and evolves with you.
 
 ## Want to contribute?
-Check out our CONTRIBUTING.md (coming soon) or open an issue with your ideas!
+Check out our [CONTRIBUTING.md](https://github.com/Aoi-03/Aries/blob/main/aries/documentations/CONTRIBUTING.md) or open an issue with your ideas!
