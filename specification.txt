@@ -1,0 +1,105 @@
+===========================================
+ ARIES 3.0 - YOUR PERSONAL AI ASSISTANT
+===========================================
+
+Version: 3.0 (Sorry, I haven't mentioned my older versions.)
+Author: Aoi
+Project: Aries - The AI Assistant That Feels Alive
+
+-------------------------------------------
+SYSTEM OVERVIEW
+-------------------------------------------
+Aries is an advanced, human-like AI assistant designed to interact naturally,
+recognize emotions, recall memories, and assist in real-time tasks.
+It combines powerful LLMs, speech recognition, TTS, and memory systems.
+
+Core Components:
+- Large Language Model (Mistral 7B / Phi-3 Mini)
+- Speech Recognition (OpenAI Whisper)
+- Text-to-Speech (Kokoro TTS)
+- Emotion Detection (MFCC + SVM/MLP)
+- Contextual Memory System (Google Drive JSON storage)
+- Spontaneous Conversations & Recall
+- Web Interface (FastAPI/Flask + WebSocket)
+- Real-Time Audio Input/Output
+
+-------------------------------------------
+FEATURES
+-------------------------------------------
+✔ Wake/Deactivate using voice commands:
+   - "Wake up, Aries"
+   - "Goodnight, Aries"
+✔ Password-based security
+✔ Natural, human-like conversations
+✔ Real-time voice interaction
+✔ Emotion detection from voice
+✔ Google Drive-based infinite memory
+✔ Spontaneous dialogues every 5–10 mins
+✔ Can recall past conversations & emotions
+✔ TTS with Kokoro for expressive voice
+✔ Speech-to-Text with Whisper
+✔ Internet access for live info
+✔ Modular & API-ready
+
+-------------------------------------------
+SYSTEM REQUIREMENTS
+-------------------------------------------
+Minimum:
+- CPU: Quad-core (Intel i5 or Raspberry Pi 5)
+- RAM: 8 GB
+- Storage: 16 GB free
+- OS: Linux / Windows / MacOS / Raspberry Pi OS
+- Python: >=3.10
+
+Recommended:
+- GPU: NVIDIA CUDA for LLM acceleration
+- RAM: 16 GB or more
+
+-------------------------------------------
+TECHNOLOGIES USED
+-------------------------------------------
+- Python 3.12
+- HuggingFace Transformers (Mistral / Phi-3)
+- PyTorch
+- Whisper (OpenAI)
+- Kokoro-TTS
+- Librosa, scikit-learn (Emotion detection)
+- FastAPI / Flask (Web UI)
+- Google Drive API (Memory storage)
+- WebSocket (Real-time communication)
+
+-------------------------------------------
+INSTALLATION STEPS
+-------------------------------------------
+1. Clone the Repository:
+   git clone https://github.com/Aoi-03/Aries.git
+   cd Aries
+
+2. Install Requirements:
+   pip install -r requirements.txt
+
+3. Configure Google Drive:
+   - Add your service account JSON in /config
+   - Enable Google Drive API
+
+4. Run Aries:
+   python app.py
+
+-------------------------------------------
+VOICE COMMANDS
+-------------------------------------------
+- Wake up: "Wake up, Aries"
+- Sleep: "Goodnight, Aries"
+
+-------------------------------------------
+PROJECT ROADMAP
+-------------------------------------------
+✔ Aries 2.1: Emotion detection + spontaneous talk
+⬜ Aries 2.2: Add face recognition
+⬜ Aries 3.0: Full ChatGPT-style control (IoT, Smart Home)
+⬜ Aries Web: Interactive dashboard with voice chat
+
+===========================================
+BECAUSE AI SHOULDN’T JUST WORK —
+IT SHOULD FEEL ALIVE.
+===========================================
