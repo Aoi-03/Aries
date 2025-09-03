@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aries — Your AI Companion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts: Orbitron & Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0D0D0D;
+      --accent-purple: #7A5CF1;
+      --accent-cyan: #1FC8E1;
+      --text-white: #FFFFFF;
+      --button-gradient: linear-gradient(90deg, #7A5CF1 0%, #1FC8E1 100%);
+    }
+    body {
+      margin: 0;
+      background: var(--bg-dark);
+      color: var(--text-white);
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    header {
+      background: linear-gradient(120deg, #1a1440 0%, #0D0D0D 60%, #1FC8E1 100%);
+      padding: 40px 0 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7A5CF1, #1FC8E1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      box-shadow: 0 0 16px #7A5CF1;
+    }
+    .logo-letter {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 0 8px #1FC8E1;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+    .hero-content {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .hero-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #7A5CF1, #1FC8E1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+    }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+    }
+    .cta-btn {
+      padding: 16px 48px;
+      font-size: 1.1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 32px;
+      background: var(--button-gradient);
+      color: #fff;
+      box-shadow: 0 4px 24px #1FC8E1aa;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin: 60px 0 40px 0;
+      flex-wrap: wrap;
+    }
+    .feature-card {
+      background: #181828;
+      border-radius: 18px;
+      padding: 32px 24px;
+      width: 240px;
+      text-align: center;
+      box-shadow: 0 2px 16px #1FC8E122;
+      margin: 12px 0;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 18px;
+      color: var(--accent-cyan);
+      filter: drop-shadow(0 0 8px #7A5CF1);
+    }
+    .feature-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent-purple);
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #e0e0e0;
+    }
+    /* Demo Section */
+    .demo-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 60px 0;
+    }
+    .demo-mockup {
+      position: relative;
+      width: 480px;
+      max-width: 90vw;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px #1FC8E144;
+      background: #222;
+      margin-bottom: 18px;
+    }
+    .demo-mockup img {
+      width: 100%;
+      display: block;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--button-gradient);
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 24px #1FC8E1aa;
+      cursor: pointer;
+      border: none;
+    }
+    .play-btn:after {
+      content: '';
+      display: block;
+      border-style: solid;
+      border-width: 16px 0 16px 28px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 8px;
+    }
+    .demo-caption {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+    /* Installation Section */
+    .install-section {
+      margin: 60px 0;
+      text-align: center;
+    }
+    .install-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 24px;
+    }
+    .install-steps {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .install-card {
+      background: #181828;
+      border-radius: 14px;
+      padding: 24px 18px;
+      width: 180px;
+      box-shadow: 0 2px 12px #7A5CF122;
+      margin: 10px 0;
+    }
+    .install-step {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent-purple);
+      margin-bottom: 8px;
+    }
+    .install-desc {
+      font-size: 0.98rem;
+      color: #e0e0e0;
+    }
+    /* Roadmap Section */
+    .roadmap-section {
+      margin: 60px 0;
+      text-align: center;
+    }
+    .roadmap-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-purple);
+      margin-bottom: 24px;
+    }
+    .roadmap-timeline {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .roadmap-item {
+      background: #181828;
+      border-radius: 14px;
+      padding: 24px 18px;
+      width: 180px;
+      box-shadow: 0 2px 12px #1FC8E122;
+      margin: 10px 0;
+      position: relative;
+    }
+    .roadmap-icon {
+      font-size: 2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+    }
+    .roadmap-version {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent-purple);
+      margin-bottom: 6px;
+    }
+    .roadmap-desc {
+      font-size: 0.98rem;
+      color: #e0e0e0;
+    }
+    /* Footer */
+    footer {
+      background: #181828;
+      padding: 32px 0 16px 0;
+      text-align: center;
+      color: #aaa;
+      font-size: 1rem;
+      margin-top: 60px;
+    }
+    .footer-links {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--accent-purple);
+    }
+    .footer-tagline {
+      margin-top: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .features, .install-steps, .roadmap-timeline {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Hero Banner -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-circle">
+          <span class="logo-letter">A</span>
+        </div>
+        <!-- Optionally add: <span style="font-family:Orbitron;font-size:1.2rem;color:#fff;">Aries</span> -->
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="https://github.com/yourrepo" target="_blank">GitHub</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="hero-content">
+      <div class="hero-title">Aries — Your AI Companion</div>
+      <div class="hero-subtitle">Conversational AI + TTS + STT + Emotion Detection</div>
+      <button class="cta-btn">Start Chatting</button>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Conversational AI</div>
+      <div class="feature-desc">Real-time chat with memory (Mistral 7B)</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔊</div>
+      <div class="feature-title">Voice Support</div>
+      <div class="feature-desc">Talk & listen with Kokoro TTS + Whisper STT</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Emotion Detection</div>
+      <div class="feature-desc">Responds to your mood</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <div class="feature-title">Offline + Local</div>
+      <div class="feature-desc">Runs on your device with Ollama</div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo-section">
+    <div class="demo-mockup">
+      <!-- Replace src with your Aries terminal screenshot -->
+      <img src="https://placehold.co/480x280/181828/FFFFFF?text=Aries+Terminal+Demo" alt="Aries Terminal Demo">
+      <button class="play-btn" title="Play Demo"></button>
+    </div>
+    <div class="demo-caption">See Aries in action (demo video coming soon)</div>
+  </section>
+
+  <!-- Installation Section -->
+  <section class="install-section">
+    <div class="install-title">Get Started in 4 Steps</div>
+    <div class="install-steps">
+      <div class="install-card">
+        <div class="install-step">Step 1</div>
+        <div class="install-desc">Clone Repo</div>
+      </div>
+      <div class="install-card">
+        <div class="install-step">Step 2</div>
+        <div class="install-desc">Install Requirements</div>
+      </div>
+      <div class="install-card">
+        <div class="install-step">Step 3</div>
+        <div class="install-desc">Run <code>main.py</code></div>
+      </div>
+      <div class="install-card">
+        <div class="install-step">Step 4</div>
+        <div class="install-desc">Start Talking</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="roadmap-section">
+    <div class="roadmap-title">Roadmap</div>
+    <div class="roadmap-timeline">
+      <div class="roadmap-item">
+        <div class="roadmap-icon"></div>
+        <div class="roadmap-version">v1.0</div>
+        <div class="roadmap-desc">Chat + TTS + STT</div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-icon">🤖</div>
+        <div class="roadmap-version">v2.0</div>
+        <div class="roadmap-desc">Emotions + Spontaneous Replies</div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-icon"></div>
+        <div class="roadmap-version">v3.0</div>
+        <div class="roadmap-desc">Full Web UI + API</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/yourrepo" target="_blank">GitHub</a> |
+      <a href="https://github.com/yourrepo/CONTRIBUTING.md" target="_blank">Contributing.md</a> |
+      <a href="https://github.com/yourrepo/LICENSE" target="_blank">License</a> |
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-tagline">
+      Built with by Aoi-03
+    </div>
+  </footer>
+</body>
+</html>
