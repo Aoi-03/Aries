@@ -2,9 +2,14 @@
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
 
+<p align="center">
+  <img src="aries/screenshots/aries.png" alt="Aries Logo" width="150"/>
+</p>
 
-
-
+<h1 align="center"> Aries: Your AI Companion </h1>
+<p align="center">
+  <b>Conversational AI + TTS + STT + Memory + Emotions</b>
+</p>
 
 
 # Aries
