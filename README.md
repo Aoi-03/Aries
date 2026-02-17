@@ -6,7 +6,7 @@
   <img src="aries/screenshots/aries.png" alt="Aries Logo" width="150"/>
 </p>
 
-<h1 align="center"> Aries: Your AI Companion </h1>
+<h1 align="center"> Aries: Your AI Companion. </h1>
 <p align="center">
   <b>Conversational AI + TTS + STT + Memory + Emotions</b>
 </p>
